@@ -10,3 +10,5 @@ slowapi
 python-dotenv
 email-validator
 aiofiles
+psycopg2-binary
+gunicorn

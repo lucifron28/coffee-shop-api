@@ -1,0 +1,892 @@
+[
+  {
+    "id": 1,
+    "name": "Americano",
+    "image": "https://images.unsplash.com/photo-1532004491497-ba35c367d634?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Espresso",
+      "Hett vattent"
+    ],
+    "ingredients": [
+      "Espresso",
+      "Hot Water"
+    ],
+    "category": "Hot Coffee",
+    "description": "A rich, bold coffee made by diluting espresso shots with hot water, creating a smooth and strong cup that rivals traditional drip coffee.",
+    "prices": {
+      "small": 3.25,
+      "medium": 3.75,
+      "large": 4.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 154,
+    "calories": 5,
+    "is_featured": true,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff"
+    ],
+    "rating": 4.6,
+    "review_count": 98
+  },
+  {
+    "id": 2,
+    "name": "Espresso",
+    "image": "https://images.unsplash.com/photo-1579992357154-faf4bde95b3d?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Espresso"
+    ],
+    "ingredients": [
+      "Espresso"
+    ],
+    "category": "Hot Coffee",
+    "description": "A concentrated coffee shot with rich flavor and golden crema. The foundation of all espresso-based drinks, perfect for purists.",
+    "prices": {
+      "single": 2.5,
+      "double": 3.5
+    },
+    "sizes": [
+      "Single Shot",
+      "Double Shot"
+    ],
+    "caffeine_mg": 64,
+    "calories": 2,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 1,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff"
+    ],
+    "rating": 4.8,
+    "review_count": 91
+  },
+  {
+    "id": 3,
+    "name": "Mocha",
+    "image": "https://images.unsplash.com/photo-1607260550778-aa9d29444ce1?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Espresso",
+      "Ångad mjölk",
+      "Choklad"
+    ],
+    "ingredients": [
+      "Espresso",
+      "Steamed Milk",
+      "Chocolate"
+    ],
+    "category": "Hot Coffee",
+    "description": "A delightful blend of rich espresso, premium chocolate, and steamed milk topped with whipped cream. Perfect for chocolate lovers.",
+    "prices": {
+      "small": 4.75,
+      "medium": 5.25,
+      "large": 5.75
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 175,
+    "calories": 290,
+    "is_featured": true,
+    "is_available": true,
+    "preparation_time": 4,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel",
+      "Extra Chocolate"
+    ],
+    "rating": 4.3,
+    "review_count": 76
+  },
+  {
+    "id": 4,
+    "name": "Hot Chocolate",
+    "image": "https://images.unsplash.com/photo-1542990253-0d0f5be5f0ed?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Choklad",
+      "Mjölk"
+    ],
+    "ingredients": [
+      "Chocolate",
+      "Milk"
+    ],
+    "category": "Hot Coffee",
+    "description": "Rich, creamy chocolate drink made with premium cocoa and topped with whipped cream. A classic comfort drink.",
+    "prices": {
+      "small": 3.25,
+      "medium": 3.75,
+      "large": 4.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 15,
+    "calories": 320,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.8,
+    "review_count": 16
+  },
+  {
+    "id": 5,
+    "name": "Chai Latte",
+    "image": "https://images.unsplash.com/photo-1578899952107-9c390f1af1b7?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Te",
+      "Mjölk",
+      "Ingefära",
+      "Kardemumma"
+    ],
+    "ingredients": [
+      "Tea",
+      "Milk",
+      "Ginger",
+      "Cardamom"
+    ],
+    "category": "Hot Coffee",
+    "description": "Aromatic spiced tea blended with steamed milk. Features warming spices of cardamom, cinnamon, and ginger.",
+    "prices": {
+      "small": 4.5,
+      "medium": 5.0,
+      "large": 5.5
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 47,
+    "calories": 240,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 3,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 5.0,
+    "review_count": 123
+  },
+  {
+    "id": 6,
+    "name": "Matcha Latte",
+    "image": "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Matcha-pulver",
+      "Mjölk",
+      "Socker*"
+    ],
+    "ingredients": [
+      "Matcha Powder",
+      "Milk",
+      "Sugar"
+    ],
+    "category": "Hot Coffee",
+    "description": "Premium matcha powder whisked with steamed milk. Earthy, creamy, and naturally energizing.",
+    "prices": {
+      "small": 4.5,
+      "medium": 5.0,
+      "large": 5.5
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 70,
+    "calories": 240,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 3,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.6,
+    "review_count": 190
+  },
+  {
+    "id": 7,
+    "name": "Seasonal Coffee",
+    "image": "https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Kaffe"
+    ],
+    "ingredients": [
+      "Coffee"
+    ],
+    "category": "Hot Coffee",
+    "description": "Our rotating seasonal blend featuring unique flavor profiles that capture the essence of each season.",
+    "prices": {
+      "small": 4.5,
+      "medium": 5.0,
+      "large": 5.5
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 120,
+    "calories": 150,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.9,
+    "review_count": 203
+  },
+  {
+    "id": 8,
+    "name": "Black Tea",
+    "image": "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Te"
+    ],
+    "ingredients": [
+      "Tea"
+    ],
+    "category": "Hot Coffee",
+    "description": "Premium black tea steeped to perfection. Rich, aromatic, and full of natural antioxidants.",
+    "prices": {
+      "small": 3.25,
+      "medium": 3.75,
+      "large": 4.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 42,
+    "calories": 2,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff"
+    ],
+    "rating": 5.0,
+    "review_count": 28
+  },
+  {
+    "id": 9,
+    "name": "Iced Latte",
+    "image": "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Espresso",
+      "Mjölk",
+      "Is",
+      "Sirap"
+    ],
+    "ingredients": [
+      "Espresso",
+      "Milk",
+      "Ice",
+      "Syrup"
+    ],
+    "category": "Hot Coffee",
+    "description": "Our signature latte served chilled over ice with cold milk. Refreshing, smooth, and perfect for warm days.",
+    "prices": {
+      "small": 4.5,
+      "medium": 5.0,
+      "large": 5.5
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 154,
+    "calories": 130,
+    "is_featured": true,
+    "is_available": true,
+    "preparation_time": 3,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.5,
+    "review_count": 228
+  },
+  {
+    "id": 10,
+    "name": "Iced Mocha Latte",
+    "image": "https://images.unsplash.com/photo-1642647391072-6a2416f048e5?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Espresso",
+      "Is",
+      "Mjölk",
+      "Choklad "
+    ],
+    "ingredients": [
+      "Espresso",
+      "Ice",
+      "Milk",
+      "Chocolate"
+    ],
+    "category": "Hot Coffee",
+    "description": "Rich chocolate and espresso served cold with milk and ice. A refreshing treat for mocha enthusiasts.",
+    "prices": {
+      "small": 4.75,
+      "medium": 5.25,
+      "large": 5.75
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 175,
+    "calories": 250,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 4,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel",
+      "Extra Chocolate"
+    ],
+    "rating": 4.5,
+    "review_count": 67
+  },
+  {
+    "id": 11,
+    "name": "Caramel Frappuccino",
+    "image": "https://images.unsplash.com/photo-1662047102608-a6f2e492411f?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "coffee",
+      "Is",
+      "Mjölk",
+      "Karamellsirap"
+    ],
+    "ingredients": [
+      "Coffee",
+      "Ice",
+      "Milk",
+      "Caramel Syrup"
+    ],
+    "category": "Hot Coffee",
+    "description": "Blended coffee drink with rich caramel flavoring, ice, and whipped cream topping. Sweet and refreshing.",
+    "prices": {
+      "small": 4.95,
+      "medium": 5.45,
+      "large": 5.95
+    },
+    "sizes": [
+      "Tall (12oz)",
+      "Grande (16oz)",
+      "Venti (20oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 370,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 5,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel",
+      "Whipped Cream",
+      "Extra Caramel Drizzle"
+    ],
+    "rating": 4.4,
+    "review_count": 194
+  },
+  {
+    "id": 12,
+    "name": "Mocha Frappuccino",
+    "image": "https://images.unsplash.com/photo-1530373239216-42518e6b4063?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Coffee",
+      "Is",
+      "Mjölk",
+      "Cocoa"
+    ],
+    "ingredients": [
+      "Coffee",
+      "Ice",
+      "Milk",
+      "Cocoa"
+    ],
+    "category": "Hot Coffee",
+    "description": "Chocolate and coffee blended with ice and topped with whipped cream. The perfect cold treat.",
+    "prices": {
+      "small": 4.95,
+      "medium": 5.45,
+      "large": 5.95
+    },
+    "sizes": [
+      "Tall (12oz)",
+      "Grande (16oz)",
+      "Venti (20oz)"
+    ],
+    "caffeine_mg": 100,
+    "calories": 340,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 5,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel",
+      "Extra Chocolate",
+      "Whipped Cream",
+      "Extra Caramel Drizzle"
+    ],
+    "rating": 4.9,
+    "review_count": 212
+  },
+  {
+    "id": 13,
+    "name": "Amaretto Latte",
+    "image": "https://static.hanos.nl/medias/han-ban-fx-chilly-amaretto-latte-2306-747x498.jpg.jpg?context=bWFzdGVyfGltYWdlc3w2MjMwMnxpbWFnZS9qcGVnfGMzbHpMVzFoYzNSbGNpOXBiV0ZuWlhNdmFHTmtMMmd5TUM4eE1ETXpOamt4TmpBM09EWXlNaTlvWVc1ZlltRnVYMlo0WDJOb2FXeHNlVjloYldGeVpYUjBiMTlzWVhSMFpWOHlNekEyWHpjME4zZzBPVGd1YW5CbkxtcHdad3wxY2ViNDdlNWE2MjQ2NTkzMWQ0YThjNjJlYTBiYTQzNDAyMTIzOWZlOTdmMDgyZTMxY2QxNDFlODU4ODY5NGI1",
+    "original_ingredients": [
+      "Lait",
+      "Sirop"
+    ],
+    "ingredients": [
+      "Milk",
+      "Sirop"
+    ],
+    "category": "Hot Coffee",
+    "description": "Our signature latte enhanced with sweet amaretto syrup for a nutty, luxurious flavor experience.",
+    "prices": {
+      "small": 4.75,
+      "medium": 5.25,
+      "large": 5.75
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 154,
+    "calories": 210,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 3,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.2,
+    "review_count": 243
+  },
+  {
+    "id": 14,
+    "name": "Cappuccino",
+    "image": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800",
+    "original_ingredients": [
+      "Espresso",
+      "Ångad mjölk",
+      "Mjölkskum"
+    ],
+    "ingredients": [
+      "Espresso",
+      "Steamed Milk",
+      "Milk Foam"
+    ],
+    "category": "Hot Coffee",
+    "description": "A perfect balance of espresso, steamed milk, and velvety milk foam. This classic Italian coffee delivers a rich, creamy experience.",
+    "prices": {
+      "small": 4.5,
+      "medium": 5.0,
+      "large": 5.5
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 154,
+    "calories": 120,
+    "is_featured": true,
+    "is_available": true,
+    "preparation_time": 3,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Oat Milk",
+      "Almond Milk",
+      "Soy Milk",
+      "Coconut Milk",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.5,
+    "review_count": 46
+  },
+  {
+    "id": 15,
+    "name": "Espresso",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/b0/Home_Made_Ice_Coffee.jpg",
+    "original_ingredients": [
+      "Espresso",
+      "Ice",
+      "Sugar*",
+      "Cream*"
+    ],
+    "ingredients": [
+      "Espresso",
+      "Ice",
+      "Sugar*",
+      "Cream*"
+    ],
+    "category": "Iced Coffee",
+    "description": "A concentrated coffee shot with rich flavor and golden crema. The foundation of all espresso-based drinks, perfect for purists.",
+    "prices": {
+      "single": 2.5,
+      "double": 3.5
+    },
+    "sizes": [
+      "Single Shot",
+      "Double Shot"
+    ],
+    "caffeine_mg": 64,
+    "calories": 2,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 1,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff"
+    ],
+    "rating": 4.2,
+    "review_count": 136
+  },
+  {
+    "id": 16,
+    "name": "Cold Brew",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/ColdBrewCoffeein_Cans.png/640px-ColdBrewCoffeein_Cans.png",
+    "original_ingredients": [
+      "Long steeped coffee",
+      "Ice"
+    ],
+    "ingredients": [
+      "Long Steeped Coffee",
+      "Ice"
+    ],
+    "category": "Iced Coffee",
+    "description": "A delicious cold brew crafted with care using premium ingredients and expert brewing techniques.",
+    "prices": {
+      "small": 4.25,
+      "medium": 4.75,
+      "large": 5.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 180,
+    "is_featured": true,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.9,
+    "review_count": 27
+  },
+  {
+    "id": 17,
+    "name": "Frappuccino",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Strawberry_Delight_Frappuccino.JPG",
+    "original_ingredients": [
+      "Espresso",
+      "Blended ice",
+      "Whip*"
+    ],
+    "ingredients": [
+      "Espresso",
+      "Blended Ice",
+      "Whip*"
+    ],
+    "category": "Iced Coffee",
+    "description": "A delicious frappuccino crafted with care using premium ingredients and expert brewing techniques.",
+    "prices": {
+      "small": 4.25,
+      "medium": 4.75,
+      "large": 5.25
+    },
+    "sizes": [
+      "Tall (12oz)",
+      "Grande (16oz)",
+      "Venti (20oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 180,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 5,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel",
+      "Whipped Cream",
+      "Extra Caramel Drizzle"
+    ],
+    "rating": 4.9,
+    "review_count": 106
+  },
+  {
+    "id": 18,
+    "name": "Mazagran",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c1/Caf%C3%A9_mazagran.jpg",
+    "original_ingredients": [
+      "Coffee",
+      "Sugar",
+      "Lemon",
+      "Rum*"
+    ],
+    "ingredients": [
+      "Coffee",
+      "Sugar",
+      "Lemon",
+      "Rum*"
+    ],
+    "category": "Iced Coffee",
+    "description": "A delicious mazagran crafted with care using premium ingredients and expert brewing techniques.",
+    "prices": {
+      "small": 4.25,
+      "medium": 4.75,
+      "large": 5.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 180,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.5,
+    "review_count": 20
+  },
+  {
+    "id": 19,
+    "name": "Banana Iced Coffee",
+    "image": "https://www.chiquita.fr/wp-content/uploads/2022/07/T-220706_DEC_Banana-Coffee-frappe.jpg",
+    "original_ingredients": [
+      "Coffee",
+      "Banana",
+      "Ice"
+    ],
+    "ingredients": [
+      "Coffee",
+      "Banana",
+      "Ice"
+    ],
+    "category": "Iced Coffee",
+    "description": "A delicious banana iced coffee crafted with care using premium ingredients and expert brewing techniques.",
+    "prices": {
+      "small": 4.25,
+      "medium": 4.75,
+      "large": 5.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 180,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.5,
+    "review_count": 122
+  },
+  {
+    "id": 20,
+    "name": "Apple Iced Coffee",
+    "image": "https://i0.wp.com/annikaeats.com/wp-content/uploads/2022/10/DSC_0682.jpg?fit=683%2C1024&ssl=1",
+    "original_ingredients": [
+      "Coffee",
+      "Apples",
+      "Cinnamon",
+      "Ice"
+    ],
+    "ingredients": [
+      "Coffee",
+      "Apples",
+      "Cinnamon",
+      "Ice"
+    ],
+    "category": "Iced Coffee",
+    "description": "A delicious apple iced coffee crafted with care using premium ingredients and expert brewing techniques.",
+    "prices": {
+      "small": 4.25,
+      "medium": 4.75,
+      "large": 5.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 180,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.3,
+    "review_count": 68
+  },
+  {
+    "id": 21,
+    "name": "Sprinkle Iced Coffee",
+    "image": "https://www.opnminded.com/wp-content/uploads/2018/04/caf%C3%A9-paillet%C3%A9-2-1-1024x576-optimized.jpg",
+    "original_ingredients": [
+      "Coffee",
+      "Sprinkles",
+      "Ice",
+      "Whipped Cream",
+      "Foam Milk"
+    ],
+    "ingredients": [
+      "Coffee",
+      "Sprinkles",
+      "Ice",
+      "Whipped Cream",
+      "Foam Milk"
+    ],
+    "category": "Iced Coffee",
+    "description": "A delicious sprinkle iced coffee crafted with care using premium ingredients and expert brewing techniques.",
+    "prices": {
+      "small": 4.25,
+      "medium": 4.75,
+      "large": 5.25
+    },
+    "sizes": [
+      "Small (8oz)",
+      "Medium (12oz)",
+      "Large (16oz)"
+    ],
+    "caffeine_mg": 95,
+    "calories": 180,
+    "is_featured": false,
+    "is_available": true,
+    "preparation_time": 2,
+    "customizations": [
+      "Extra Shot",
+      "Decaf",
+      "Half-Caff",
+      "Vanilla",
+      "Caramel"
+    ],
+    "rating": 4.9,
+    "review_count": 175
+  }
+]
