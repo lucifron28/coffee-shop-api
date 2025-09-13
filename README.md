@@ -1,52 +1,142 @@
-# Coffee Shop API - Production Ready
+# Coffee Shop API
 
-## Installation & Setup
+# ☕ Coffee Shop API
 
-1. **Install dependencies:**
-```bash
-pip install -r requirements.txt
+A FastAPI application for managing a coffee shop's operations, featuring JWT authentication, order management, product catalog, and comprehensive admin functionality.
+
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.116+-green.svg)](https://fastapi.tiangolo.com)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Ready-blue.svg)](https://postgresql.org)
+[![Heroku](https://img.shields.io/badge/Deploy-Heroku-purple.svg)](https://heroku.com)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
+## Features
+
+### 🔐 Authentication & Security
+- **JWT Authentication** with secure token-based auth
+- **Role-based Access Control** (User/Admin permissions)
+- **Password Security** with bcrypt hashing and validation rules
+- **Rate Limiting** to prevent API abuse
+- **CORS Protection** with configurable origins
+- **Input Validation** with Pydantic models
+
+### 📦 Product Management
+- **Full CRUD Operations** for coffee products
+- **Advanced Search & Filtering** by category, price, availability
+- **Product Categories** (espresso, latte, cappuccino, etc.)
+- **Size Variants** with different pricing
+- **Stock Management** with availability tracking
+
+### 🛒 Order System
+- **Order Placement** with automatic total calculation
+- **Order History** for customers
+- **Order Status Tracking** (pending, confirmed, completed, cancelled)
+- **Admin Order Management** with status updates
+- **Detailed Order Items** with size and quantity
+
+### 👨‍💼 Admin Dashboard
+- **User Management** (view, activate/deactivate, promote to admin)
+- **Order Overview** with filtering and status management
+- **System Statistics** (user count, order metrics, revenue)
+- **Product Administration** (create, update, delete products)
+
+## 🛠️ Tech Stack
+
+- **Backend**: FastAPI, Python 3.11+
+- **Database**: PostgreSQL (production), SQLite (development)
+- **Authentication**: JWT with python-jose
+- **ORM**: SQLAlchemy with async support
+- **Validation**: Pydantic v2
+- **Deployment**: Heroku with Gunicorn + Uvicorn
+- **Security**: Passlib, bcrypt, rate limiting
+
+
+## 📊 API Endpoints
+
+### 🔐 Authentication
+```
+POST   /auth/register          Register new user
+POST   /auth/login             Login and get JWT token  
+GET    /auth/me                Get current user profile
+PUT    /auth/me                Update user profile
 ```
 
-2. **Environment Configuration:**
-Copy `.env` file and update values for production:
-```bash
-cp .env .env.production
+### ☕ Products
+```
+GET    /products/              List products (with pagination & filters)
+GET    /products/search        Search products by name/description
+GET    /products/categories    Get available categories
+GET    /products/{id}          Get product details
+POST   /products/              Create product (admin only)
+PUT    /products/{id}          Update product (admin only)
+DELETE /products/{id}          Delete product (admin only)
 ```
 
-Key settings to change in production:
-- `SECRET_KEY`: Generate a secure random key
-- `DATABASE_URL`: Use PostgreSQL for production
-- `ENVIRONMENT`: Set to "production"
-- `ALLOWED_ORIGINS`: Set to your frontend domains
-
-3. **Database Setup:**
-```bash
-# Load initial coffee products
-python load_products.py
+### 🛒 Orders
+```
+POST   /orders/                Create new order
+GET    /orders/                Get user's order history
+GET    /orders/{id}            Get order details
+PATCH  /orders/{id}/status     Update order status (admin only)
 ```
 
-4. **Create Admin User:**
-```bash
-# Register first user via API, then manually set is_admin=True in database
-# Or create via SQL: UPDATE users SET is_admin=TRUE WHERE username='admin';
+### 👨‍💼 Admin
+```
+GET    /admin/users            List all users
+PATCH  /admin/users/{id}/admin Toggle admin status
+PATCH  /admin/users/{id}/active Toggle user status
+GET    /admin/orders           List all orders
+GET    /admin/stats            Get system statistics
 ```
 
-## Running the Application
-
-### Development:
-```bash
-uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+### 🔍 Monitoring
+```
+GET    /health                 API health check
+GET    /health/db              Database connectivity check
 ```
 
-### Production:
-```bash
-uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4
+## 📁 Project Structure
+
+```
+coffee-shop-api/
+├── app/
+│   ├── __init__.py
+│   ├── main.py              # FastAPI app and middleware
+│   ├── config.py            # Environment configuration
+│   ├── database.py          # Database connection and setup
+│   ├── models.py            # SQLAlchemy models
+│   ├── schemas.py           # Pydantic schemas
+│   ├── middleware.py        # Custom middleware
+│   └── routers/
+│       ├── __init__.py
+│       ├── auth.py          # Authentication endpoints
+│       ├── products.py      # Product management
+│       ├── orders.py        # Order management
+│       └── admin.py         # Admin functionality
+├── data/
+│   └── processed_coffee_products.json
+├── requirements.txt
+├── Procfile                 # Heroku configuration
+├── runtime.txt             # Python version
+├── release.py              # Database seeding script
+└── load_products.py        # Initial data loader
 ```
 
-### With Gunicorn (Recommended for production):
-```bash
-gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
-```
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [FastAPI](https://fastapi.tiangolo.com/) for the amazing framework
+- [SQLAlchemy](https://sqlalchemy.org/) for the ORM
+- [Pydantic](https://pydantic.dev/) for data validation
+- Coffee enthusiasts everywhere ☕
+
+---
+
+**🔗 Live Demo**: [https://lucifron-coffee-shop-api-a48f8ef1eb6e.herokuapp.com/docs](https://lucifron-coffee-shop-api-a48f8ef1eb6e.herokuapp.com/docs)
+
 
 ## API Endpoints
 
@@ -107,50 +197,3 @@ gunicorn app.main:app -w 4 -k uvicorn.workers.UvicornWorker --bind 0.0.0.0:8000
 - Order management with automatic price calculation
 - User role management
 - Comprehensive error responses
-
-## Testing
-
-Visit `http://localhost:8000/docs` for interactive API documentation (Swagger UI).
-
-Example API usage:
-
-1. **Register a user:**
-```bash
-curl -X POST "http://localhost:8000/auth/register" \
-  -H "Content-Type: application/json" \
-  -d '{"username": "testuser", "email": "test@example.com", "password": "SecurePass123"}'
-```
-
-2. **Login:**
-```bash
-curl -X POST "http://localhost:8000/auth/token" \
-  -H "Content-Type: application/x-www-form-urlencoded" \
-  -d "username=testuser&password=SecurePass123"
-```
-
-3. **Get products:**
-```bash
-curl "http://localhost:8000/api/v1/products"
-```
-
-4. **Create an order (requires auth token):**
-```bash
-curl -X POST "http://localhost:8000/api/v1/orders" \
-  -H "Authorization: Bearer YOUR_JWT_TOKEN" \
-  -H "Content-Type: application/json" \
-  -d '{"items": [{"product_id": 1, "size": "medium", "quantity": 2}]}'
-```
-
-## Deployment
-
-For production deployment:
-
-1. Use a production WSGI server (Gunicorn + Uvicorn)
-2. Set up a reverse proxy (Nginx)
-3. Use a production database (PostgreSQL)
-4. Configure environment variables
-5. Set up SSL/TLS certificates
-6. Monitor with health checks
-7. Set up logging aggregation
-
-Your FastAPI Coffee Shop API is now production-ready! 🚀☕
