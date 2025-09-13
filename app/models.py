@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, Table
+from sqlalchemy import Column, Integer, String, Float, Boolean, ForeignKey, DateTime
 from sqlalchemy.orm import relationship, declarative_base
 from sqlalchemy.types import JSON
+from datetime import datetime
 
 Base = declarative_base()
 
@@ -32,6 +33,7 @@ class User(Base):
     hashed_password = Column(String)
     is_active = Column(Boolean, default=True)
     is_admin = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow)
 
 class Order(Base):
     __tablename__ = "orders"
@@ -40,4 +42,5 @@ class Order(Base):
     items = Column(JSON)
     total_price = Column(Float)
     status = Column(String, default="pending")
+    created_at = Column(DateTime, default=datetime.utcnow)
     user = relationship("User")
