@@ -127,7 +127,7 @@
       "Chocolate",
       "Milk"
     ],
-    "category": "Hot Coffee",
+    "category": "Hot Beverages",
     "description": "Rich, creamy chocolate drink made with premium cocoa and topped with whipped cream. A classic comfort drink.",
     "prices": {
       "small": 3.25,
@@ -170,7 +170,7 @@
       "Ginger",
       "Cardamom"
     ],
-    "category": "Hot Coffee",
+    "category": "Tea & Specialty",
     "description": "Aromatic spiced tea blended with steamed milk. Features warming spices of cardamom, cinnamon, and ginger.",
     "prices": {
       "small": 4.5,
@@ -215,7 +215,7 @@
       "Milk",
       "Sugar"
     ],
-    "category": "Hot Coffee",
+    "category": "Tea & Specialty",
     "description": "Premium matcha powder whisked with steamed milk. Earthy, creamy, and naturally energizing.",
     "prices": {
       "small": 4.5,
@@ -293,7 +293,7 @@
     "ingredients": [
       "Tea"
     ],
-    "category": "Hot Coffee",
+    "category": "Tea & Specialty",
     "description": "Premium black tea steeped to perfection. Rich, aromatic, and full of natural antioxidants.",
     "prices": {
       "small": 3.25,
@@ -334,7 +334,7 @@
       "Ice",
       "Syrup"
     ],
-    "category": "Hot Coffee",
+    "category": "Iced Coffee",
     "description": "Our signature latte served chilled over ice with cold milk. Refreshing, smooth, and perfect for warm days.",
     "prices": {
       "small": 4.5,
@@ -381,7 +381,7 @@
       "Milk",
       "Chocolate"
     ],
-    "category": "Hot Coffee",
+    "category": "Iced Coffee",
     "description": "Rich chocolate and espresso served cold with milk and ice. A refreshing treat for mocha enthusiasts.",
     "prices": {
       "small": 4.75,
@@ -429,7 +429,7 @@
       "Milk",
       "Caramel Syrup"
     ],
-    "category": "Hot Coffee",
+    "category": "Iced Coffee",
     "description": "Blended coffee drink with rich caramel flavoring, ice, and whipped cream topping. Sweet and refreshing.",
     "prices": {
       "small": 4.95,
@@ -474,7 +474,7 @@
       "Milk",
       "Cocoa"
     ],
-    "category": "Hot Coffee",
+    "category": "Iced Coffee",
     "description": "Chocolate and coffee blended with ice and topped with whipped cream. The perfect cold treat.",
     "prices": {
       "small": 4.95,
