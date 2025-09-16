@@ -1,8 +1,6 @@
-# Coffee Shop API
-
 # ☕ Coffee Shop API
 
-A FastAPI application for managing a coffee shop's operations, featuring JWT authentication, order management, product catalog, and comprehensive admin functionality.
+A production-ready FastAPI application for managing a coffee shop: JWT auth, product catalog, orders, and admin endpoints.
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.116+-green.svg)](https://fastapi.tiangolo.com)
@@ -10,190 +8,105 @@ A FastAPI application for managing a coffee shop's operations, featuring JWT aut
 [![Heroku](https://img.shields.io/badge/Deploy-Heroku-purple.svg)](https://heroku.com)
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
+Live docs: https://lucifron-coffee-shop-api-a48f8ef1eb6e.herokuapp.com/docs
+
 ## Features
 
-### 🔐 Authentication & Security
-- **JWT Authentication** with secure token-based auth
-- **Role-based Access Control** (User/Admin permissions)
-- **Password Security** with bcrypt hashing and validation rules
-- **Rate Limiting** to prevent API abuse
-- **CORS Protection** with configurable origins
-- **Input Validation** with Pydantic models
+- Authentication & security
+	- JWT authentication, role-based access (user/admin)
+	- Bcrypt password hashing and validation rules
+	- Rate limiting, CORS, and security headers
+	- Pydantic validation and consistent error responses
+- Products
+	- CRUD for coffee products
+	- Search by name/description; filter by category, availability, featured
+	- Size variants with pricing; pagination (skip/limit)
+- Orders
+	- Create orders with automatic totals by size and quantity
+	- Get user order history and details
+	- Admin can update order status (pending → preparing → ready → completed/cancelled)
+- Admin
+	- Manage users (toggle admin/active)
+	- List all orders and basic stats (users, products, orders, pending)
+- Monitoring
+	- Health checks and DB connectivity; basic metrics endpoint
 
-### 📦 Product Management
-- **Full CRUD Operations** for coffee products
-- **Advanced Search & Filtering** by category, price, availability
-- **Product Categories** (espresso, latte, cappuccino, etc.)
-- **Size Variants** with different pricing
-- **Stock Management** with availability tracking
+## Tech stack
 
-### 🛒 Order System
-- **Order Placement** with automatic total calculation
-- **Order History** for customers
-- **Order Status Tracking** (pending, confirmed, completed, cancelled)
-- **Admin Order Management** with status updates
-- **Detailed Order Items** with size and quantity
+- FastAPI (Python 3.11)
+- SQLAlchemy ORM (sync)
+- Pydantic v2 for schemas
+- JWT (python-jose), passlib[bcrypt]
+- Rate limiting (slowapi)
+- PostgreSQL (production) / SQLite (development)
+- Uvicorn/Gunicorn server
 
-### 👨‍💼 Admin Dashboard
-- **User Management** (view, activate/deactivate, promote to admin)
-- **Order Overview** with filtering and status management
-- **System Statistics** (user count, order metrics, revenue)
-- **Product Administration** (create, update, delete products)
+## API endpoints
 
-## 🛠️ Tech Stack
+Note: Product, order, and admin routes are prefixed with `/api/v1`. Auth and monitoring are at the root.
 
-- **Backend**: FastAPI, Python 3.11+
-- **Database**: PostgreSQL (production), SQLite (development)
-- **Authentication**: JWT with python-jose
-- **ORM**: SQLAlchemy with async support
-- **Validation**: Pydantic v2
-- **Deployment**: Heroku with Gunicorn + Uvicorn
-- **Security**: Passlib, bcrypt, rate limiting
+### Authentication
+- POST `/auth/register` — Register new user
+- POST `/auth/token` — Login and get JWT token
+- GET `/auth/me` — Current user info
 
+### Products
+- GET `/api/v1/products` — List products (filters: skip, limit, category, featured, available)
+- GET `/api/v1/products/search` — Search products (?q=term)
+- GET `/api/v1/products/categories` — Available categories
+- GET `/api/v1/products/{id}` — Product details
+- POST `/api/v1/products` — Create product (admin)
+- PUT `/api/v1/products/{id}` — Update product (admin)
+- DELETE `/api/v1/products/{id}` — Delete product (admin)
 
-## 📊 API Endpoints
+### Orders
+- POST `/api/v1/orders` — Create order (auth)
+- GET `/api/v1/orders` — User's orders (auth)
+- GET `/api/v1/orders/{id}` — Order details (auth)
+- PATCH `/api/v1/orders/{id}/status` — Update order status (admin)
 
-### 🔐 Authentication
-```
-POST   /auth/register          Register new user
-POST   /auth/login             Login and get JWT token  
-GET    /auth/me                Get current user profile
-PUT    /auth/me                Update user profile
-```
+### Admin
+- GET `/api/v1/admin/users` — List all users (admin)
+- PATCH `/api/v1/admin/users/{id}/admin` — Toggle admin status (admin)
+- PATCH `/api/v1/admin/users/{id}/active` — Toggle user active status (admin)
+- GET `/api/v1/admin/orders` — List all orders (admin)
+- GET `/api/v1/admin/stats` — System stats (admin)
 
-### ☕ Products
-```
-GET    /products/              List products (with pagination & filters)
-GET    /products/search        Search products by name/description
-GET    /products/categories    Get available categories
-GET    /products/{id}          Get product details
-POST   /products/              Create product (admin only)
-PUT    /products/{id}          Update product (admin only)
-DELETE /products/{id}          Delete product (admin only)
-```
+### Monitoring
+- GET `/health` — Health check
+- GET `/health/db` — Database health
+- GET `/metrics` — Basic metrics
 
-### 🛒 Orders
-```
-POST   /orders/                Create new order
-GET    /orders/                Get user's order history
-GET    /orders/{id}            Get order details
-PATCH  /orders/{id}/status     Update order status (admin only)
-```
-
-### 👨‍💼 Admin
-```
-GET    /admin/users            List all users
-PATCH  /admin/users/{id}/admin Toggle admin status
-PATCH  /admin/users/{id}/active Toggle user status
-GET    /admin/orders           List all orders
-GET    /admin/stats            Get system statistics
-```
-
-### 🔍 Monitoring
-```
-GET    /health                 API health check
-GET    /health/db              Database connectivity check
-```
-
-## 📁 Project Structure
+## Project structure
 
 ```
 coffee-shop-api/
 ├── app/
-│   ├── __init__.py
-│   ├── main.py              # FastAPI app and middleware
-│   ├── config.py            # Environment configuration
-│   ├── database.py          # Database connection and setup
-│   ├── models.py            # SQLAlchemy models
-│   ├── schemas.py           # Pydantic schemas
-│   ├── middleware.py        # Custom middleware
-│   └── routers/
-│       ├── __init__.py
-│       ├── auth.py          # Authentication endpoints
-│       ├── products.py      # Product management
-│       ├── orders.py        # Order management
-│       └── admin.py         # Admin functionality
+│   ├── main.py            # FastAPI app, router registration
+│   ├── config.py          # Settings and env parsing
+│   ├── database.py        # Engine/session and init_db
+│   ├── models.py          # SQLAlchemy models
+│   ├── schemas.py         # Pydantic v2 schemas
+│   ├── middleware.py      # CORS, rate limit, security, logging
+│   ├── monitoring.py      # /health, /health/db, /metrics
+│   ├── auth_router.py     # Auth endpoints
+│   ├── product_router.py  # Product endpoints
+│   ├── order_router.py    # Order endpoints
+│   └── admin_router.py    # Admin endpoints
 ├── data/
 │   └── processed_coffee_products.json
 ├── requirements.txt
-├── Procfile                 # Heroku configuration
-├── runtime.txt             # Python version
-├── release.py              # Database seeding script
-└── load_products.py        # Initial data loader
+├── Procfile               # Web + release phase
+├── runtime.txt            # Python version
+├── release.py             # DB init + seed/update
+└── load_products.py       # Local data loader
 ```
 
-## 📝 License
+## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT — see [LICENSE](LICENSE).
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
-- [FastAPI](https://fastapi.tiangolo.com/) for the amazing framework
-- [SQLAlchemy](https://sqlalchemy.org/) for the ORM
-- [Pydantic](https://pydantic.dev/) for data validation
-- Coffee enthusiasts everywhere ☕
-
----
-
-**🔗 Live Demo**: [https://lucifron-coffee-shop-api-a48f8ef1eb6e.herokuapp.com/docs](https://lucifron-coffee-shop-api-a48f8ef1eb6e.herokuapp.com/docs)
-
-
-## API Endpoints
-
-### Authentication
-- `POST /auth/register` - Register new user
-- `POST /auth/token` - Login (get JWT token)
-- `GET /auth/me` - Get current user info
-
-### Products
-- `GET /api/v1/products` - List products (with filters)
-- `GET /api/v1/products/search?q=term` - Search products
-- `GET /api/v1/products/categories` - Get product categories
-- `GET /api/v1/products/{id}` - Get specific product
-- `POST /api/v1/products` - Create product (admin)
-- `PUT /api/v1/products/{id}` - Update product (admin)
-- `DELETE /api/v1/products/{id}` - Delete product (admin)
-
-### Orders
-- `POST /api/v1/orders` - Create new order
-- `GET /api/v1/orders` - Get user's orders
-- `GET /api/v1/orders/{id}` - Get specific order
-- `PATCH /api/v1/orders/{id}/status` - Update order status (admin)
-
-### Admin
-- `GET /api/v1/admin/users` - List all users
-- `PATCH /api/v1/admin/users/{id}/admin` - Toggle admin status
-- `PATCH /api/v1/admin/users/{id}/active` - Toggle user active status
-- `GET /api/v1/admin/orders` - List all orders
-- `GET /api/v1/admin/stats` - Get system statistics
-
-### Monitoring
-- `GET /health` - Health check
-- `GET /health/db` - Database health check
-- `GET /metrics` - Basic metrics
-
-## Features
-
-### Security
-- JWT authentication with secure tokens
-- Password validation (minimum 8 chars, mixed case, numbers)
-- Rate limiting (configurable per endpoint)
-- CORS protection
-- Security headers (XSS, CSRF protection)
-- Input validation and sanitization
-
-### Production Features
-- Environment-based configuration
-- Structured logging
-- Error handling and validation
-- Database connection pooling
-- Health checks
-- Metrics endpoint
-- Admin functionality
-
-### API Features
-- Pagination and filtering
-- Product search
-- Order management with automatic price calculation
-- User role management
-- Comprehensive error responses
+- FastAPI, SQLAlchemy, and Pydantic communities
+- Everyone who loves great coffee ☕
