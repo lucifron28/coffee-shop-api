@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Query
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
 from sqlalchemy.orm import Session
 from typing import List, Optional
 from . import schemas, models, database
@@ -16,7 +16,7 @@ def get_db():
 @router.get("/products", response_model=List[schemas.CoffeeProduct])
 @limiter.limit("100/minute")
 def list_products(
-    request,
+    request: Request,
     skip: int = Query(0, ge=0),
     limit: int = Query(100, ge=1, le=100),
     category: Optional[str] = None,
@@ -44,7 +44,7 @@ def get_categories(db: Session = Depends(get_db)):
 @router.get("/products/search")
 @limiter.limit("50/minute")
 def search_products(
-    request,
+    request: Request,
     q: str = Query(..., min_length=2),
     db: Session = Depends(get_db)
 ):
