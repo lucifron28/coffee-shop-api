@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from fastapi.security import OAuth2PasswordBearer
 from sqlalchemy.orm import Session
 from typing import List
@@ -68,7 +68,7 @@ def calculate_order_total(items: List[schemas.OrderItem], db: Session):
 
 @router.post("/orders", response_model=schemas.Order)
 @limiter.limit("10/minute")
-def create_order(request, order: schemas.OrderCreate, current_user: models.User = Depends(get_current_user), db: Session = Depends(get_db)):
+def create_order(request: Request, order: schemas.OrderCreate, current_user: models.User = Depends(get_current_user), db: Session = Depends(get_db)):
     # Calculate total price
     total_price = calculate_order_total(order.items, db)
     
