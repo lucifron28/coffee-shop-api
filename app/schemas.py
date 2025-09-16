@@ -3,16 +3,16 @@ from pydantic import BaseModel, EmailStr, validator
 import re
 
 class PriceModel(BaseModel):
-    small: Optional[float]
-    medium: Optional[float]
-    large: Optional[float]
-    single: Optional[float]
-    double: Optional[float]
+    small: Optional[float] = None
+    medium: Optional[float] = None
+    large: Optional[float] = None
+    single: Optional[float] = None
+    double: Optional[float] = None
 
 class CoffeeProductBase(BaseModel):
     name: str
-    image: Optional[str]
-    original_ingredients: Optional[List[str]]
+    image: Optional[str] = None
+    original_ingredients: Optional[List[str]] = None
     ingredients: List[str]
     category: str
     description: str
@@ -38,6 +38,9 @@ class CoffeeProductCreate(CoffeeProductBase):
 
 class CoffeeProduct(CoffeeProductBase):
     id: int
+
+    class Config:
+        from_attributes = True
 
 class UserBase(BaseModel):
     username: str
