@@ -24,18 +24,30 @@ def seed_products():
     db: Session = SessionLocal()
     try:
         existing_count = db.query(CoffeeProduct).count()
-        if existing_count > 0:
-            print(f"📦 Products already exist ({existing_count} products)")
-            return
         
         products_file = "data/processed_coffee_products.json"
         if not os.path.exists(products_file):
             print("⚠️  No products file found, skipping product seeding")
             return
             
-        print("📦 Loading coffee products...")
         with open(products_file, 'r') as f:
             products = json.load(f)
+        
+        if existing_count > 0:
+            print(f"📦 Products already exist ({existing_count} products)")
+            print("🔄 Updating product categories...")
+            
+            # Update existing products with new categories
+            for prod in products:
+                existing_product = db.query(CoffeeProduct).filter(CoffeeProduct.name == prod['name']).first()
+                if existing_product:
+                    existing_product.category = prod['category']
+                    
+            db.commit()
+            print("✅ Updated product categories")
+            return
+        
+        print("📦 Loading coffee products...")
         
         for prod in products:
             prod_data = prod.copy()
